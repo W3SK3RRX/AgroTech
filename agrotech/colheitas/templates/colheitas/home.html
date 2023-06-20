@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="pt-br">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.rtl.min.css" integrity="sha384-PJsj/BTMqILvmcej7ulplguok8ag4xFTPryRq8xevL7eBYSmpXKcbNVuy+P0RMgq" crossorigin="anonymous">
+
+    <title>Agrotech</title>
+  </head>
+  <body>
+    <nav style="background-color: #2FB147 !important" class="navbar bg-light">
+        <div class="container-fluid">
+            <span class="navbar-brand mb-0 h1" style="color: #FFFFFF">AgroTech</span>
+        </div>
+    </nav>
+    <div style="text-align: center;" class="container">
+        <h1>Cadastro de colheitas</h1>
+    </div>
+
+    <form action="{% url 'listagem_colheitas' %}" method="post">
+        {% csrf_token %}
+        <div class="container">
+            <div class="mb-3">
+                <label class="form-label">Cultura: </label>
+                <input class="form-control" name="cultura" type="text">
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Data de plantio: </label>
+                <input class="form-control" name="datap" type="date"><br>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Data de colheita: </label>
+                <input class="form-control" name="datac" type="date"><br>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Quantidade colhida: </label>
+                <input class="form-control" name="qtd" type="number"><br>
+            </div>
+            <button class="btn btn-success">Cadastrar</button>
+        </div>
+    </form>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+
+  </body>
+</html>
